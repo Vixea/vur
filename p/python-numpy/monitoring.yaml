@@ -1,0 +1,7 @@
+releases:
+  id: 2509
+  rss: https://github.com/numpy/numpy/releases.atom
+security:
+  cpe:
+  - vendor: numpy
+    product: numpy

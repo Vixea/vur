@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pybind11
+version     : v3.0.1
+release     : 1
+homepage    : https://github.com/pybind/pybind11
+upstreams   :
+    - https://github.com/pybind/pybind11/archive/refs/tags/v3.0.1.tar.gz : 741633da746b7c738bb71f1854f957b9da660bcd2dce68d71949037f0969d0ca
+summary     : UPDATE SUMMARY
+description : |
+    UPDATE DESCRIPTION
+license     : BSD-3-Clause
+builddeps   :
+    - pkgconfig(python3)
+    - python(scikit-build-core)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+    %pyproject_build
+install     : |
+    %cmake_install
+    %pyproject_install

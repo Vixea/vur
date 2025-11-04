@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : robin-map
+version     : 1.4.0
+release     : 1
+homepage    : https://github.com/Tessil/robin-map
+upstreams   :
+    - https://github.com/Tessil/robin-map/archive/refs/tags/v1.4.0.tar.gz : 7930dbf9634acfc02686d87f615c0f4f33135948130b8922331c16d90a03250c
+summary     : C++ implementation of a fast hash map and hash set using robin hood hashing
+description : |
+    C++ implementation of a fast hash map and hash set using robin hood hashing
+license     : 
+    - JSON
+    - MIT
+    - Xnet
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

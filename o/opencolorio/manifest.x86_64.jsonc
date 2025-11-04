@@ -1,0 +1,106 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"opencolorio": {
+			"build-depends": [
+				"pkgconfig(Imath)",
+				"pkgconfig(OpenEXR)",
+				"pkgconfig(expat)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(minizip-ng)",
+				"pkgconfig(pybind11)",
+				"pkgconfig(python3)",
+				"pkgconfig(yaml-cpp)",
+				"pkgconfig(zlib)",
+				"pystring-devel"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libImath-3_2.so.30(x86_64))",
+				"soname(libOpenEXR-3_4.so.33(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libexpat.so.1(x86_64))",
+				"soname(liblcms2.so.2(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libminizip-ng.so.4(x86_64))",
+				"soname(libpystring.so(x86_64))",
+				"soname(libunwind.so.1(x86_64))",
+				"soname(libyaml-cpp.so.0.8(x86_64))"
+			],
+			"files": [
+				"/usr/bin/ocioarchive",
+				"/usr/bin/ociobakelut",
+				"/usr/bin/ociocheck",
+				"/usr/bin/ociochecklut",
+				"/usr/bin/ocioconvert",
+				"/usr/bin/ociocpuinfo",
+				"/usr/bin/ociolutimage",
+				"/usr/bin/ociomakeclf",
+				"/usr/bin/ocioperf",
+				"/usr/bin/ociowrite",
+				"/usr/lib/libOpenColorIO.so.2.4",
+				"/usr/lib/libOpenColorIO.so.2.4.2",
+				"/usr/lib/python3.11/site-packages/PyOpenColorIO/PyOpenColorIO.so",
+				"/usr/lib/python3.11/site-packages/PyOpenColorIO/__init__.py",
+				"/usr/share/ocio/setup_ocio.sh"
+			],
+			"name": "opencolorio",
+			"provides": [
+				"binary(ocioarchive)",
+				"binary(ociobakelut)",
+				"binary(ociocheck)",
+				"binary(ociochecklut)",
+				"binary(ocioconvert)",
+				"binary(ociocpuinfo)",
+				"binary(ociolutimage)",
+				"binary(ociomakeclf)",
+				"binary(ocioperf)",
+				"binary(ociowrite)",
+				"soname(libOpenColorIO.so.2.4(x86_64))",
+				"soname(python3.11/site-packages/PyOpenColorIO/PyOpenColorIO.so(x86_64))"
+			]
+		},
+		"opencolorio-devel": {
+			"build-depends": [
+				"pkgconfig(Imath)",
+				"pkgconfig(OpenEXR)",
+				"pkgconfig(expat)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(minizip-ng)",
+				"pkgconfig(pybind11)",
+				"pkgconfig(python3)",
+				"pkgconfig(yaml-cpp)",
+				"pkgconfig(zlib)",
+				"pystring-devel"
+			],
+			"depends": [
+				"opencolorio"
+			],
+			"files": [
+				"/usr/include/OpenColorIO/OpenColorABI.h",
+				"/usr/include/OpenColorIO/OpenColorAppHelpers.h",
+				"/usr/include/OpenColorIO/OpenColorIO.h",
+				"/usr/include/OpenColorIO/OpenColorTransforms.h",
+				"/usr/include/OpenColorIO/OpenColorTypes.h",
+				"/usr/include/OpenColorIO/imageioapphelpers/imageio.h",
+				"/usr/lib/cmake/OpenColorIO/OpenColorIOConfig.cmake",
+				"/usr/lib/cmake/OpenColorIO/OpenColorIOConfigVersion.cmake",
+				"/usr/lib/cmake/OpenColorIO/OpenColorIOTargets-release.cmake",
+				"/usr/lib/cmake/OpenColorIO/OpenColorIOTargets.cmake",
+				"/usr/lib/libOpenColorIO.so",
+				"/usr/lib/libOpenColorIOimageioapphelpers.a",
+				"/usr/lib/pkgconfig/OpenColorIO.pc"
+			],
+			"name": "opencolorio-devel",
+			"provides": [
+				"cmake(OpenColorIO)",
+				"pkgconfig(OpenColorIO)"
+			]
+		}
+	},
+	"source-name": "opencolorio",
+	"source-release": "1",
+	"source-version": "2.4.2"
+}

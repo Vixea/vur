@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : openimageio
+version     : 3.0.10.0
+release     : 1
+homepage    : https://github.com/AcademySoftwareFoundation/OpenImageIO
+upstreams   :
+    - https://github.com/AcademySoftwareFoundation/OpenImageIO/releases/download/v3.0.10.0/OpenImageIO-3.0.10.0.tar.gz : 4a9dff01d24e68042d942f0134e0fa717bbca04113c0d8a3d3b1edc4a8986aa7
+summary     : Reading, writing, and processing images in a wide variety of file formats
+description : |
+    Reading, writing, and processing images in a wide variety of file formats, using a format-agnostic API, aimed at VFX applications.
+license     : 
+    - Apache-2.0
+builddeps   :
+    - pkgconfig(OpenColorIO)
+    - pkgconfig(python3)
+    - pkgconfig(Imath)
+    - pkgconfig(tbb)
+    - pkgconfig(fmt)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(libpng)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libheif)
+    - pkgconfig(libjxl)
+    - pkgconfig(libraw_r)
+    - pkgconfig(freetype2)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(OpenEXR)
+    - pkgconfig(zlib)
+    - pkgconfig(pybind11)
+    - robin-map-devel
+setup       : |
+    %cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_SKIP_INSTALL_RPATH=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

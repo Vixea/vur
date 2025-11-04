@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : alembic
+version     : 1.8.8
+release     : 1
+homepage    : https://github.com/alembic/alembic
+upstreams   :
+    - https://github.com/alembic/alembic/archive/refs/tags/1.8.8.tar.gz : ba1f34544608ef7d3f68cafea946ec9cc84792ddf9cda3e8d5590821df71f6c6
+summary     : Alembic is an open framework for storing and sharing scene data that includes a C++ library, a file format, and client plugins and applications.
+description : |
+    Alembic is an open framework for storing and sharing scene data that includes a C++ library, a file format, and client plugins and applications.
+license     : BSD-3-Clause
+builddeps   :
+    #- hdf5
+    - pkgconfig(Imath)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

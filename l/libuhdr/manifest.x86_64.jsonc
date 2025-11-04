@@ -1,0 +1,53 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libultrahdr": {
+			"build-depends": [
+				"pkgconfig(egl)",
+				"pkgconfig(libjpeg)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libjpeg.so.8(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/ultrahdr_app",
+				"/usr/lib/libuhdr.so.1",
+				"/usr/lib/libuhdr.so.1.4.0"
+			],
+			"name": "libultrahdr",
+			"provides": [
+				"binary(ultrahdr_app)",
+				"soname(libuhdr.so.1(x86_64))"
+			]
+		},
+		"libultrahdr-devel": {
+			"build-depends": [
+				"pkgconfig(egl)",
+				"pkgconfig(libjpeg)"
+			],
+			"depends": [
+				"libultrahdr",
+				"pkgconfig(libjpeg)"
+			],
+			"files": [
+				"/usr/include/ultrahdr_api.h",
+				"/usr/lib/libuhdr.a",
+				"/usr/lib/libuhdr.so",
+				"/usr/lib/pkgconfig/libuhdr.pc"
+			],
+			"name": "libultrahdr-devel",
+			"provides": [
+				"pkgconfig(libuhdr)"
+			]
+		}
+	},
+	"source-name": "libultrahdr",
+	"source-release": "1",
+	"source-version": "1.4.0"
+}

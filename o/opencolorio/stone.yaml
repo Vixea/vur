@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : opencolorio
+version     : 2.4.2
+release     : 1
+homepage    : https://github.com/AcademySoftwareFoundation/OpenColorIO
+upstreams   :
+    - https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.4.2.tar.gz : 2d8f2c47c40476d6e8cea9d878f6601d04f6d5642b47018eaafa9e9f833f3690
+summary     : UPDATE SUMMARY
+description : |
+    UPDATE DESCRIPTION
+license     : 
+    - BSD-3-Clause
+    - BSD-3-Clause-No-Military-License
+    - BSD-3-Clause-No-Nuclear-License-2014
+    - Intel
+builddeps   :
+    - pkgconfig(expat)
+    - pkgconfig(Imath)
+    - pkgconfig(python3)
+    - pkgconfig(pybind11)
+    - pkgconfig(minizip-ng)
+    - pkgconfig(OpenEXR)
+    - pkgconfig(lcms2)
+    - pkgconfig(yaml-cpp)
+    - pkgconfig(zlib)
+    - pystring-devel
+setup       : |
+    %cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_SKIP_INSTALL_RPATH=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

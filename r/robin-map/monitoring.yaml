@@ -1,0 +1,5 @@
+releases:
+  id: 18602
+  rss: https://github.com/Tessil/robin-map/releases.atom
+security:
+  cpe: ~ # No CPE found, last checked (2025-09-10)

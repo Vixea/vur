@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : openshadinglanguage
+version     : 1.14.6.0
+release     : 1
+homepage    : https://github.com/AcademySoftwareFoundation/OpenShadingLanguage
+upstreams   :
+    - https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/releases/download/v1.14.6.0/OSL-1.14.6.0.tar.gz : 69cf1c80b3147195c6ed96d3aeb6e2b6fb0d13c8ff2562cc7eb943fbfa0c3c9e
+summary     : Advanced shading language for production GI renderers
+description : |
+    Advanced shading language for production GI renderers
+license     : 
+    - BSD-3-Clause
+builddeps   :
+    - binary(bison)
+    - binary(flex)
+    - cmake(Clang)
+    - cmake(LLVM)
+    - pkgconfig(python3)
+    - pkgconfig(pybind11)
+    - pkgconfig(Imath)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(OpenImageIO)
+    - pkgconfig(pugixml)
+    - pkgconfig(zlib)
+    - robin-map-devel
+setup       : |
+    export LDFLAGS="$LDFLAGS -Wl,--undefined-version"
+
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

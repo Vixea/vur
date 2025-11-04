@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pugixml
+version     : 1.15
+release     : 1
+homepage    : https://pugixml.org/
+upstreams   :
+    - https://github.com/zeux/pugixml/releases/download/v1.15/pugixml-1.15.tar.gz : 655ade57fa703fb421c2eb9a0113b5064bddb145d415dd1f88c79353d90d511a
+summary     : Light-weight, simple and fast XML parser for C++ with XPath support
+description : |
+    Light-weight, simple and fast XML parser for C++ with XPath support
+license     : 
+    - JSON
+    - MIT
+    - Xnet
+setup       : |
+    %cmake -DBUILD_SHARED_LIBS=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

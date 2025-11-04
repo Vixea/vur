@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libultrahdr
+version     : 1.4.0
+release     : 1
+homepage    : https://github.com/google/libultrahdr
+upstreams   :
+    - https://github.com/google/libultrahdr/archive/refs/tags/v1.4.0.tar.gz : e7e1252e2c44d8ed6b99ee0f67a3caf2d8a61c43834b13b1c3cd485574c03ab9
+summary     : Ultra HDR is a true HDR image format, and is backcompatible. libultrahdr is the reference codec for the Ultra HDR format. The codecs that support the format can render the HDR intent of the image on HDR displays; other codecs can still decode and display the SDR intent of the image.
+description : |
+    Ultra HDR is a true HDR image format, and is backcompatible. libultrahdr is the reference codec for the Ultra HDR format. The codecs that support the format can render the HDR intent of the image on HDR displays; other codecs can still decode and display the SDR intent of the image.
+license     : 
+    - Apache-2.0
+builddeps   :
+    - pkgconfig(egl)
+    - pkgconfig(libjpeg)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

@@ -1,0 +1,5 @@
+releases:
+  id: 9631
+  rss: https://github.com/AcademySoftwareFoundation/OpenColorIO/releases.atom
+security:
+  cpe: ~ # No CPE found, last checked (2025-09-10)

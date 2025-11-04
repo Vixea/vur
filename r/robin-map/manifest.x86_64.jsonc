@@ -1,0 +1,32 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"robin-map": {
+			"files": [
+				"/usr/share/cmake/tsl-robin-map/tsl-robin-mapConfig.cmake",
+				"/usr/share/cmake/tsl-robin-map/tsl-robin-mapConfigVersion.cmake",
+				"/usr/share/cmake/tsl-robin-map/tsl-robin-mapTargets.cmake"
+			],
+			"name": "robin-map",
+			"provides": [
+				"cmake(tsl-robin-map)"
+			]
+		},
+		"robin-map-devel": {
+			"depends": [
+				"robin-map"
+			],
+			"files": [
+				"/usr/include/tsl/robin_growth_policy.h",
+				"/usr/include/tsl/robin_hash.h",
+				"/usr/include/tsl/robin_map.h",
+				"/usr/include/tsl/robin_set.h"
+			],
+			"name": "robin-map-devel"
+		}
+	},
+	"source-name": "robin-map",
+	"source-release": "1",
+	"source-version": "1.4.0"
+}

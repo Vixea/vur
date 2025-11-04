@@ -1,0 +1,79 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : blender
+version     : 4.5.3
+release     : 1
+summary     : The Free and Open Source 3D Creation Software
+license     : 
+    - Apache-2.0
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+    - LGPL-2.1-or-later
+    - MIT
+    - MPL-2.0
+    - Zlib
+homepage    : https://www.blender.org/
+upstreams   :
+    - git|https://projects.blender.org/blender/blender.git : 67807e1800cc48cc7bff3c793525e1179a4d64ca
+description : |
+    The Free and Open Source 3D Creation Software
+builddeps   :
+    - cmake(Alembic)
+    - cmake(Boost)
+    - cmake(embree)
+    - cmake(OSL)
+    - pkgconfig(epoxy)
+    - pkgconfig(fftw3)
+    - pkgconfig(freetype2)
+    - pkgconfig(python3)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libpng)
+    - pkgconfig(wayland-server)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(sndfile)
+    - pkgconfig(gmp)
+    - pkgconfig(sdl2-compat)
+    - pkgconfig(tbb)
+    - pkgconfig(jemalloc)
+    - pkgconfig(OpenEXR)
+    - pkgconfig(openal)
+    - pkgconfig(numpy)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libavdevice)
+    - pkgconfig(libavfilter)
+    - pkgconfig(libswscale)
+    - pkgconfig(OpenImageIO)
+    - pkgconfig(OpenColorIO)
+    - pkgconfig(xi)
+    - pkgconfig(xrender)
+    - pkgconfig(libzstd)
+    - pkgconfig(pugixml)
+    - pkgconfig(shaderc)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(libdecor-0)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(vulkan)
+    - git-lfs
+networking  : yes
+setup       : |
+    export LDFLAGS="${LDFLAGS} -Wl,--undefined-version"
+    git remote set-url origin https://projects.blender.org/blender/blender.git
+    git lfs install
+    git lfs pull
+
+    %patch %(pkgdir)/0001-audaspace-ffmpeg-8.0.patch
+    %patch %(pkgdir)/0002-imbuf-ffmpeg-8.0.patch
+    %cmake -D WITH_INSTALL_PORTABLE=OFF -D WITH_PYTHON_INSTALL=OFF -D WITH_CYCLES_OSL=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    python -m compileall "${pkgdir}/usr/share/blender"
+    python -O -m compileall "${pkgdir}/usr/share/blender"
+    %break_continue

@@ -1,0 +1,5 @@
+releases:
+  id: 112681
+  rss: https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/releases.atom
+security:
+  cpe: ~ # No CPE found, last checked (2025-09-10)

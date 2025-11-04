@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pystring
+version     : 1.1.4+git.02ef118
+release     : 1
+homepage    : https://github.com/imageworks/pystring
+upstreams   :
+    - git|https://github.com/imageworks/pystring.git : 02ef1186d6b77bc35f385bd4db2da75b4736adb7
+summary     : C++ functions matching the interface and behavior of python string methods with std::string
+description : |
+    C++ functions matching the interface and behavior of python string methods with std::string
+license     : 
+    - BSD-3-Clause
+    - BSD-3-Clause-No-Military-License
+setup       : |
+    %cmake -DBUILD_SHARED_LIBS=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+            paths:
+                - /usr/lib/libpystring.so

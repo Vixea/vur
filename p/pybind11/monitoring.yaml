@@ -1,0 +1,5 @@
+releases:
+  id: 13384
+  rss: https://github.com/pybind/pybind11/releases.atom
+security:
+  cpe: ~ # No CPE found, last checked (2025-09-10)

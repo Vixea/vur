@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-numpy
+version     : 2.3.3
+release     : 1
+homepage    : https://github.com/numpy/numpy
+upstreams   :
+    - https://github.com/numpy/numpy/releases/download/v2.3.3/numpy-2.3.3.tar.gz : ddc7c39727ba62b80dfdbedf400d1c10ddfa8eefbd7ec8dcb118be8b56d31029
+summary     : The fundamental package for scientific computing with Python.
+description : |
+    The fundamental package for scientific computing with Python.
+license     : 
+    - BSD-3-Clause
+    - BSD-3-Clause
+    - BSD-3-Clause-No-Military-License
+    - BSD-3-Clause-No-Nuclear-License-2014
+    - Intel
+builddeps   :
+    - binary(cython)
+    - binary(ninja)
+setup       : |
+    mkdir aerynos-builddir
+    python vendored-meson/meson/meson.py setup \
+        --buildtype="plain" \
+        --prefix="%(prefix)" \
+        --libdir="lib%(libsuffix)" \
+        --bindir="%(bindir)" \
+        --sbindir="%(sbindir)" \
+        --libexecdir="lib%(libsuffix)/%(name)" \
+        --includedir="%(includedir)" \
+        --datadir="%(datadir)" \
+        --mandir="%(mandir)" \
+        --infodir="%(infodir)" \
+        --localedir="%(localedir)" \
+        --sysconfdir="%(sysconfdir)" \
+        --localstatedir="%(localstatedir)" \
+        --wrap-mode="nodownload" \
+        "%(builddir)" .
+build       : |
+    %ninja
+install     : |
+    %ninja_install

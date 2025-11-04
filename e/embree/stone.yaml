@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : embree
+version     : 4.4.0
+release     : 1
+homepage    : https://www.embree.org/
+upstreams   :
+    - https://github.com/RenderKit/embree/archive/refs/tags/v4.4.0.tar.gz : acb517b0ea0f4b442235d5331b69f96192c28da6aca5d5dde0cbe40799638d5c
+summary     : Embree ray tracing kernels repository.
+description : |
+    Embree ray tracing kernels repository.
+license     : 
+    - Apache-2.0
+builddeps   :
+    - pkgconfig(glfw3)
+    - pkgconfig(opengl)
+    - pkgconfig(tbb)
+setup       : |
+    %patch %(pkgdir)/0001-use-llvm-objdump.patch
+    %cmake -DCMAKE_SKIP_INSTALL_RPATH=ON -DEMBREE_STATIC_LIB=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

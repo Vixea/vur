@@ -1,0 +1,13 @@
+diff --git a/common/cmake/check_globals.cmake b/common/cmake/check_globals.cmake
+index 103a7e331..117b2ebf5 100644
+--- a/common/cmake/check_globals.cmake
++++ b/common/cmake/check_globals.cmake
+@@ -5,7 +5,7 @@ IF (WIN32 OR APPLE)
+    return()
+ ENDIF()
+ 
+-execute_process(COMMAND objdump -C -t ${file} OUTPUT_VARIABLE output)
++execute_process(COMMAND llvm-objdump -C -t ${file} OUTPUT_VARIABLE output)
+ string(REPLACE "\n" ";" output ${output})
+ 
+ foreach (line ${output})

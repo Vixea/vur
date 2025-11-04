@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : yaml-cpp
+version     : 0.8.0+git.aa8d4e4
+release     : 1
+homepage    : https://github.com/jbeder/yaml-cpp
+upstreams   :
+    - git|https://github.com/jbeder/yaml-cpp.git : aa8d4e4750ec9fe9f8cc680eb90f1b15955c817e
+summary     : A YAML parser and emitter in C++
+description : |
+    A YAML parser and emitter in C++
+license     : 
+    - JSON
+    - MIT
+    - X11-distribute-modifications-variant
+    - Xnet
+setup       : |
+    %cmake -DBUILD_SHARED_LIBS=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

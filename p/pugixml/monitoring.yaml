@@ -1,0 +1,7 @@
+releases:
+  id: ~ # https://release-monitoring.org/ and use the numeric id in the url of project
+  rss: https://github.com/zeux/pugixml/releases.atom
+security:
+  cpe:
+  - vendor: pugixml_project
+    product: pugixml

@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : scikit-build-core
+version     : 0.11.6
+release     : 1
+homepage    : https://github.com/scikit-build/scikit-build-core
+upstreams   :
+    - https://github.com/scikit-build/scikit-build-core/archive/refs/tags/v0.11.6.tar.gz : 803f6c8942a90f3d5e763123628348b13e2a82fd9c71b2186a892cbcaa000d0c
+summary     : A next generation Python CMake adaptor and Python API for plugins
+description : |
+    A next generation Python CMake adaptor and Python API for plugins
+license     : 
+    - Apache-2.0
+builddeps   :
+    - pkgconfig(python3)
+    - python(hatchling)
+    - python(hatch-vcs)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
